@@ -217,6 +217,13 @@ namespace Lucian_The_Troll
             Gapcloser.OnGapcloser += Gapcloser_OnGapCloser;
             Drawing.OnDraw += Drawing_OnDraw;
         }
+        Obj_AI_Base.OnBasicAttack += delegate (Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+            {
+                if (sender.IsValidTarget(800) && Q.IsReady && sender.IsEnemy && sender.Type == GameObjectType.AIHeroClient)
+                {
+                  
+                }
+        };
 
         public static
             void Drawing_OnDraw(EventArgs args)
